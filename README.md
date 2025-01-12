@@ -1,59 +1,63 @@
 # SOAP Hello World Project
 
-Este proyecto demuestra un servicio web SOAP simple implementado en PHP. Incluye un servidor (`soap-server.php`) y un cliente (`test-soap.php`) que interactúa con el servidor para realizar operaciones básicas SOAP. El proyecto está dockerizado para facilitar su despliegue y ejecución.
+This project demonstrates a simple SOAP web service implemented in PHP. It includes a server (`soap-server.php`) and a client (`test-soap.php`) that interacts with the server to perform basic SOAP operations. The project is containerized using Docker to simplify deployment and execution.
 
-## Requisitos
+## Requirements
 
-- PHP 8.1 o superior
-- Docker (para contenedores)
-- Docker Compose (si usas múltiples contenedores)
+- PHP 8.1 or higher
+- Docker (for containers)
+- Docker Compose (if using a multi-container setup)
 
-## Descripción del Proyecto
+## Project Description
 
-El servidor expone una función `sayHello` que recibe un nombre y devuelve un mensaje de saludo. El cliente realiza una solicitud al servidor y recibe la respuesta.
+The server exposes a `sayHello` function that takes a name and returns a greeting message. The client sends a request to the server and receives the response.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
 - **PHP 8.1 (CLI)**
 - **Docker**
 
-## Pasos para Clonar y Ejecutar el Proyecto
+## Steps to Clone and Run the Project
 
-### Clonar el repositorio
+### Clone the repository
 
-Para clonar este proyecto, ejecuta el siguiente comando:
+To clone this project, execute the following command:
 
 ```bash
 git clone https://your-repository-url.git
 
-Without Docker:
-
+### Without Docker:
 Navigate to the project directory:
+
 bash
-```bash
+Copiar código
 cd soap-hello-world
-```
 Start the PHP embedded server:
 
-```bash
+bash
+Copiar código
 php -S localhost:8000
-```
 With Docker (Recommended):
-
 Build the Docker image:
 
-```bash
+bash
+Copiar código
 docker build -t soap-server .
-```
 Run the Docker container:
 
-```bash
+bash
+Copiar código
 docker run -p 8000:8000 soap-server
-```
-The server will be accessible at http://localhost:8000/soap-server.php.
+The server will be accessible at: http://localhost:8000/soap-server.php.
 
 Docker Hub
 For pre-built Docker images, visit the Docker Hub link to pull and run the image.
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+
+
+
+
