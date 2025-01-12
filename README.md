@@ -25,6 +25,7 @@ To clone this project, execute the following command:
 
 ```bash
 git clone https://your-repository-url.git
+```
 
 ### Without Docker:
 Navigate to the project directory:
@@ -40,15 +41,16 @@ php -S localhost:8000
 With Docker (Recommended):
 Build the Docker image:
 
-bash
-Copiar código
+```bash
 docker build -t soap-server .
+```
 Run the Docker container:
 
-bash
-Copiar código
+``` bash
+|
 docker run -p 8000:8000 soap-server
 The server will be accessible at: http://localhost:8000/soap-server.php.
+```
 
 Docker Hub
 For pre-built Docker images, visit the Docker Hub link to pull and run the image.
