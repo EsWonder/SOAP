@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:tns="urn://example.com/soap" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    name="HelloWorldService" 
+    targetNamespace="urn://example.com/soap">
+    
+    <message name="SayHelloRequest">
+        <part name="name" type="xsd:string"/>
+    </message>
+    <message name="SayHelloResponse">
+        <part name="response" type="xsd:string"/>
+    </message>
+    
+    <portType name="HelloWorldPortType">
+        <operation name="sayHello">
+            <input message="tns:SayHelloRequest"/>
+            <output message="tns:SayHelloResponse"/>
+        </operation>
+    </portType>
+    
+    <binding name="HelloWorldBinding" type="tns:HelloWorldPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="sayHello">
+            <soap:operation soapAction="urn://example.com/soap/sayHello"/>
+            <input>
+                <soap:body use="encoded" namespace="urn://example.com/soap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn://example.com/soap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+    </binding>
+    
+    <service name="HelloWorldService">
+        <port name="HelloWorldPort" binding="tns:HelloWorldBinding">
+            <soap:address location="http://localhost:8000/soap-server.php"/>
+        </port>
+    </service>
+</definitions>
